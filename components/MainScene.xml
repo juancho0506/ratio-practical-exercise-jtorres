@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+
+<component name="MainScene" extends="Scene" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd" initialFocus = "exampleRowList">
+	<!-- importing main handler -->
+    <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
+    
+    <children>
+    	<!-- The main content -->
+	    <RowList 
+		    id = "exampleRowList" 
+	        translation = "[ 100, 160 ]" 
+	        itemComponentName = "RowListItem"
+	        numRows = "3" 
+	        itemSize = "[ 1980, 540 ]" 
+	        rowItemSize = "[[960, 540], [324, 216]]"
+	        itemSpacing = "[ 0, 100 ]"
+	        rowItemSpacing = "[[150, 0], [20,0]]"
+	        showRowLabel = "[ false, true ]" 
+	        drawFocusFeedback = "true"
+	        focusXOffset = "[500, 0]"
+	        vertFocusAnimationStyle = "fixedFocusWrap" 
+	        rowFocusAnimationStyle = "fixedFocusWrap" />
+	     
+	     <!-- Playback node -->
+		 <Video
+		      id="VideoPlayer"
+		      visible="false"
+		      translation="[0, 0]"
+		      width="1920"
+		      height="1080" />
+	      
+   	</children>
+	
+	<interface>
+		<!-- Row item selection handler -->
+    	<field id="rowItemSelected" type="intarray" alias="exampleRowList.rowItemSelected" onChange="OnRowItemSelected" alwaysnotify="true" />
+	</interface>   
+	    
+</component>

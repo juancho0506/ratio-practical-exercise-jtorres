@@ -1,0 +1,43 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+ 
+<component name = "RowListItem" extends = "Group" >
+ 
+  <interface > 
+    <field id = "itemContent" type = "node" onChange = "showcontent"/>
+    <field id = "focusPercent" type = "float" onChange = "showfocus"/> 
+    <field id = "rowFocusPercent" type = "float" onChange = "showrowfocus"/>
+  </interface>
+ 
+  <!-- importing main handler -->
+    <script type="text/brightscript" uri="pkg:/components/RowListItem.brs" />
+
+  <children >
+
+    <Poster 
+      id = "itemPoster"
+      translation = "[ 10, 10 ]" 
+      width = "900" 
+      height = "500" 
+      scaleRotateCenter = "[ 256.0, 144.0 ]" >
+
+      <Rectangle 
+        id = "itemMask" 
+        color = "0x000000FF" 
+        opacity = "0.75" 
+        width = "900" 
+        height = "500" 
+        scaleRotateCenter = "[ 256.0, 144.0 ]"/> 
+
+    </Poster>
+    <Label 
+	      id = "itemLabel" 
+	      translation = "[ 350, 464 ]" 
+	      horizAlign = "right" 
+	      width = "420" 
+	      opacity = "0.0"/>
+
+  </children>
+
+</component>
