@@ -16,7 +16,10 @@ End sub
 function onContentChanged() as void
     print "MainScene.onContentChanged : content changed!"
     m.rowlist.content = m.serverLoad.content
-    print "MainScene.onContentChanged : row list content: " ; m.rowlist.content
+    'm.rowlist.content = CreateObject("roSGNode", "RowListContent")
+    m.rowlist.setFocus(true)
+    m.rowlist.visible = true
+    'print "MainScene.onContentChanged : row list content: " ; m.rowlist.content
 end function
 
 ' Listener to the item row selection in the RowList (OK button)
@@ -26,9 +29,12 @@ sub OnRowItemSelected()
     rowListItem = m.rowlist.content.getChild(m.rowlist.rowItemSelected[0])
     print "videoContent : " ; rowListItem 
     rowVideoItemSelected = rowListItem.getChild(m.rowlist.rowItemSelected[1])
-    m.videoPlayer.content = rowVideoItemSelected
-    'm.videoPlayer.url = rowVideoItemSelected.url
-    print "Content node: " ; rowVideoItemSelected
+    
+    videoContent = CreateObject("RoSGNode", "ContentNode")
+    videoContent.title = rowVideoItemSelected.title
+    videoContent.url = rowVideoItemSelected.url
+    videoContent.streamformat = "hls"
+    m.videoPlayer.content = videoContent
     
     m.videoPlayer.visible = true
     m.videoPlayer.setFocus(true)
