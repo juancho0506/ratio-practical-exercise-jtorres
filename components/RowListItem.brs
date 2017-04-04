@@ -7,9 +7,24 @@ end sub
 
 sub showcontent()
   itemcontent = m.top.itemContent
+  contentParent = itemcontent.getParent()
   m.itemposter.uri = itemcontent.HDPosterUrl
   m.itemlabel.text = itemcontent.title
   m.itemposter.url = itemcontent.url
+  print "contentParent.title: "; contentParent.title
+  if contentParent.title = "Featured"
+     print "enter the featured if"
+     m.itemposter.width = "900"
+     m.itemposter.height = "500"
+     m.itemMask.width = "900"
+     m.itemMask.height = "500"
+  else
+    m.itemposter.width = "380"
+    m.itemposter.height = "200"
+    m.itemMask.width = "380"
+    m.itemMask.height = "200"
+  end if
+  print "heigth and width atributes: "; m.itemposter.width ; " - "; m.itemposter.height
 end sub
 
 sub showfocus()

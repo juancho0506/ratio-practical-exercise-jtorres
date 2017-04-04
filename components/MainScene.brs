@@ -27,7 +27,6 @@ sub OnRowItemSelected()
     print "You selected an item!"
     ' Obtain the actual focused content in the RowList
     rowListItem = m.rowlist.content.getChild(m.rowlist.rowItemSelected[0])
-    print "videoContent : " ; rowListItem 
     rowVideoItemSelected = rowListItem.getChild(m.rowlist.rowItemSelected[1])
     
     videoContent = CreateObject("RoSGNode", "ContentNode")
@@ -58,7 +57,7 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
 end function
 
 sub OnVideoPlayerStateChange()
-    ? "MainScene > OnVideoPlayerStateChange : state == ";m.videoPlayer.state
+    '? "MainScene > OnVideoPlayerStateChange : state == ";m.videoPlayer.state
     if m.videoPlayer.state = "error"
         'hide vide player in case of error
         m.videoPlayer.visible = false
