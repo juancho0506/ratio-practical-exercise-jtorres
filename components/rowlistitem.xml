@@ -6,6 +6,7 @@
  
   <interface > 
     <field id = "itemContent" type = "node" onChange = "showcontent"/>
+    <field id = "itemType" type = "integer"></field>
     <field id = "focusPercent" type = "float" onChange = "showfocus"/> 
     <field id = "rowFocusPercent" type = "float" onChange = "showrowfocus"/>
   </interface>
@@ -18,16 +19,16 @@
     <Poster 
       id = "itemPoster"
       translation = "[ 10, 10 ]" 
-      width = "900" 
-      height = "500" 
+      width = "0" 
+      height = "0" 
       scaleRotateCenter = "[ 256.0, 144.0 ]" >
 
       <Rectangle 
         id = "itemMask" 
         color = "0x000000FF" 
         opacity = "0.75" 
-        width = "900" 
-        height = "500" 
+        width = "0" 
+        height = "0" 
         scaleRotateCenter = "[ 256.0, 144.0 ]"/> 
 
     </Poster>
@@ -35,7 +36,7 @@
 	      id = "itemLabel" 
 	      translation = "[ 350, 464 ]" 
 	      horizAlign = "right" 
-	      width = "420" 
+	      width = "0" 
 	      opacity = "0.0"/>
 
   </children>

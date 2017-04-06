@@ -16,14 +16,19 @@ xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGra
 	        itemComponentName = "RowListItem"
 	        numRows = "3" 
 	        itemSize = "[ 1980, 540 ]" 
-	        rowItemSize = "[[960, 540], [324, 216]]"
-	        itemSpacing = "[ 0, 100 ]"
-	        rowItemSpacing = "[[150, 0], [20,0]]"
+	        rowItemSize = "[[960, 540], [384, 216]]"
+	        itemSpacing = "[ 0, 0 ]"
+	        rowItemSpacing = "[[25, 50], [50,0], [20, 0]]"
 	        showRowLabel = "[ false, true ]" 
-	        drawFocusFeedback = "false"
+	        drawFocusFeedback = "true"
 	        focusXOffset = "[500, 0]"
 	        vertFocusAnimationStyle = "fixedFocusWrap" 
 	        rowFocusAnimationStyle = "fixedFocusWrap" />
+	        
+	     <!-- Overhang Node -->
+	    <Overhang
+	      showClock="true"
+	      title="Ratio Practical Exercise" />
 	     
 	     <!-- Playback node -->
 		 <Video

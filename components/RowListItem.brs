@@ -12,21 +12,25 @@ sub showcontent()
   m.itemlabel.text = itemcontent.title
   m.itemposter.url = itemcontent.url
   if contentParent.title = "Featured"
-     m.itemposter.width = "900"
-     m.itemposter.height = "500"
-     m.itemMask.width = "900"
-     m.itemMask.height = "500"
+     m.itemposter.width = "960"
+     m.itemposter.height = "540"
+     m.itemMask.width = "960"
+     m.itemMask.height = "540"
+     m.itemlabel.width = m.itemposter.width
+     m.itemlabel.translation = [0, 450]
   else
-    m.itemposter.width = "380"
-    m.itemposter.height = "200"
-    m.itemMask.width = "380"
-    m.itemMask.height = "200"
+    m.itemposter.width = "384"
+    m.itemposter.height = "216"
+    m.itemMask.width = "384"
+    m.itemMask.height = "216"
+    m.itemlabel.width = m.itemposter.width
+    m.itemlabel.translation = [0, 180]
   end if
 end sub
 
 sub showfocus()
   scale = 1 + (m.top.focusPercent * 0.3)
-  m.itemposter.scale = [scale, scale]
+  'm.itemposter.scale = [scale, scale]
 end sub
 
 sub showrowfocus()
