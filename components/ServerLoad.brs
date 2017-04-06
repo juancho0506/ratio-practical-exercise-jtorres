@@ -33,23 +33,7 @@ sub generateContentNodeFromJson(jsonResponse as Object) as Object
         featured = jsonResponse.featured
         'Generate a new row with child content nodes.
         featuredNode = RowItems.createChild("ContentNode")
-        'featuredNode = generateGenericContentNodesFromJson(featured)
-        ' Set the featured's title
-        if featured.title <> invalid
-            featuredNode.title = featured.title
-        end if
-        ' Check the child nodes to generate the content for featured
-        if featured.items <> invalid
-            for each item in featured.items
-                ' Append the new item child
-                nodeChild = featuredNode.createChild("ContentNode")
-                nodeChild.title = item.title
-                nodeChild.description = item.description
-                nodeChild.HDPosterUrl = item.image
-                nodeChild.url = item.video
-                nodeChild.streamformat = "hls"
-            end for
-        end if
+        featuredNode = generateGenericContentNodesFromJson(featured, featuredNode)
     end if
     
     ' Generate Recent Nodes
@@ -57,24 +41,7 @@ sub generateContentNodeFromJson(jsonResponse as Object) as Object
         recent = jsonResponse.recent
         'Generate a new row with child content nodes.
         recentNode = RowItems.createChild("ContentNode")
-        'recentNode = generateGenericContentNodesFromJson(recent)
-        
-        ' Set the featured's title
-        if recent.title <> invalid
-            recentNode.title = recent.title
-        end if
-        ' Check the child nodes to generate the content for featured
-        if recent.items <> invalid
-            for each item in recent.items
-                ' Append the new item child
-                nodeChild = recentNode.createChild("ContentNode")
-                nodeChild.title = item.title
-                nodeChild.description = item.description
-                nodeChild.HDPosterUrl = item.image
-                nodeChild.url = item.video
-                nodeChild.streamformat = "hls"
-            end for
-        end if
+        recentNode = generateGenericContentNodesFromJson(recent, recentNode)
     end if 
     
     ' Generate bonanza Nodes
@@ -82,41 +49,23 @@ sub generateContentNodeFromJson(jsonResponse as Object) as Object
         bonanza = jsonResponse.bonanza
         'Generate a new row with child content nodes.
         bonanzaNode = RowItems.createChild("ContentNode")
-        'recentNode = generateGenericContentNodesFromJson(recent)
-
-        ' Set the featured's title
-        if bonanza.title <> invalid
-            bonanzaNode.title = bonanza.title
-        end if
-        ' Check the child nodes to generate the content for featured
-        if bonanza.items <> invalid
-            for each item in bonanza.items
-                ' Append the new item child
-                nodeChild = bonanzaNode.createChild("ContentNode")
-                nodeChild.title = item.title
-                nodeChild.description = item.description
-                nodeChild.HDPosterUrl = item.image
-                nodeChild.url = item.video
-                nodeChild.streamformat = "hls"
-            end for
-        end if
+        recentNode = generateGenericContentNodesFromJson(bonanza, bonanzaNode)
     end if 
 
     return RowItems
 end sub
 
 ' *** Method to generate in a generic way the content nodes for all the json nodes.
-sub generateGenericContentNodesFromJson(jsonNode as Object) as Object
-    topNode = createObject("RoSGNode","ContentNode")
+sub generateGenericContentNodesFromJson(jsonNode as Object, contentNode as Object) as Object
         ' Set the featured's title
         if jsonNode.title <> invalid
-            topNode.title = jsonNode.title
+            contentNode.title = jsonNode.title
         end if
         ' Check the child nodes to generate the content for featured
         if jsonNode.items <> invalid
             for each item in jsonNode.items
                 ' Append the new item child
-                nodeChild = topNode.createChild("ContentNode")
+                nodeChild = contentNode.createChild("ContentNode")
                 nodeChild.title = item.title
                 nodeChild.description = item.description
                 nodeChild.HDPosterUrl = item.image
@@ -124,5 +73,5 @@ sub generateGenericContentNodesFromJson(jsonNode as Object) as Object
                 nodeChild.streamformat = "hls"
             end for
         end if       
-    return topNode
+    return contentNode
 end sub
