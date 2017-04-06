@@ -6,7 +6,6 @@
  
   <interface > 
     <field id = "itemContent" type = "node" onChange = "showcontent"/>
-    <field id = "itemType" type = "integer"></field>
     <field id = "focusPercent" type = "float" onChange = "showfocus"/> 
     <field id = "rowFocusPercent" type = "float" onChange = "showrowfocus"/>
   </interface>

@@ -33,7 +33,7 @@ sub generateContentNodeFromJson(jsonResponse as Object) as Object
         featured = jsonResponse.featured
         'Generate a new row with child content nodes.
         featuredNode = RowItems.createChild("ContentNode")
-        featuredNode = generateGenericContentNodesFromJson(featured, featuredNode)
+        featuredNode = generateGenericContentNodesFromJson(featured, featuredNode, 0)
     end if
     
     ' Generate Recent Nodes
@@ -41,7 +41,7 @@ sub generateContentNodeFromJson(jsonResponse as Object) as Object
         recent = jsonResponse.recent
         'Generate a new row with child content nodes.
         recentNode = RowItems.createChild("ContentNode")
-        recentNode = generateGenericContentNodesFromJson(recent, recentNode)
+        recentNode = generateGenericContentNodesFromJson(recent, recentNode, 1)
     end if 
     
     ' Generate bonanza Nodes
@@ -49,14 +49,15 @@ sub generateContentNodeFromJson(jsonResponse as Object) as Object
         bonanza = jsonResponse.bonanza
         'Generate a new row with child content nodes.
         bonanzaNode = RowItems.createChild("ContentNode")
-        recentNode = generateGenericContentNodesFromJson(bonanza, bonanzaNode)
+        recentNode = generateGenericContentNodesFromJson(bonanza, bonanzaNode, 1)
     end if 
 
     return RowItems
 end sub
 
 ' *** Method to generate in a generic way the content nodes for all the json nodes.
-sub generateGenericContentNodesFromJson(jsonNode as Object, contentNode as Object) as Object
+' * Category parameter stands for the category list row to show in this case : 0 - Featured style , 1 - Other ones.
+sub generateGenericContentNodesFromJson(jsonNode as Object, contentNode as Object, category as integer) as Object
         ' Set the featured's title
         if jsonNode.title <> invalid
             contentNode.title = jsonNode.title
@@ -65,12 +66,14 @@ sub generateGenericContentNodesFromJson(jsonNode as Object, contentNode as Objec
         if jsonNode.items <> invalid
             for each item in jsonNode.items
                 ' Append the new item child
-                nodeChild = contentNode.createChild("ContentNode")
+                nodeChild = contentNode.createChild("RatioCustomNode")
                 nodeChild.title = item.title
                 nodeChild.description = item.description
                 nodeChild.HDPosterUrl = item.image
                 nodeChild.url = item.video
                 nodeChild.streamformat = "hls"
+                nodeChild.addField("category", "integer", false)
+                nodeChild.category = category
             end for
         end if       
     return contentNode

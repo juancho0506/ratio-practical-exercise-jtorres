@@ -7,11 +7,12 @@ end sub
 
 sub showcontent()
   itemcontent = m.top.itemContent
-  contentParent = itemcontent.getParent()
+  'contentParent = itemcontent.getParent()
   m.itemposter.uri = itemcontent.HDPosterUrl
   m.itemlabel.text = itemcontent.title
   m.itemposter.url = itemcontent.url
-  if contentParent.title = "Featured"
+  
+  if itemcontent.category = 0
      m.itemposter.width = "960"
      m.itemposter.height = "540"
      m.itemMask.width = "960"
