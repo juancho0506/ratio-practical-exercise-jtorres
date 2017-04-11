@@ -23,19 +23,40 @@
       scaleRotateCenter = "[ 256.0, 144.0 ]" >
 
       <Rectangle 
-        id = "itemMask" 
-        color = "0x000000FF" 
+        id = "itemMask"
+        color = "0x000000FF"
         opacity = "0.75" 
         width = "0" 
         height = "0" 
-        scaleRotateCenter = "[ 256.0, 144.0 ]"/> 
+        scaleRotateCenter = "[ 256.0, 144.0 ]"/>
+      
+       <Rectangle 
+        id = "itemMaskDescription"
+        color = "0x495564"
+        opacity = "0.75"
+        width = "600" 
+        height = "540" 
+        scaleRotateCenter = "[ 200.0, 220.0 ]"
+        visible = "false">
+        	
+        	<Label 
+		      id = "itemDescriptionLabel" 
+		      translation = "[ 0, 0 ]" 
+		      horizAlign = "left" 
+		      width = "0" 
+		      wrap = "true"
+		      maxlines = "8"
+		      
+		      opacity = "50.0"/>
+        	
+        </Rectangle> 
 
     </Poster>
     <Label 
 	      id = "itemLabel" 
 	      translation = "[ 350, 464 ]" 
 	      horizAlign = "right" 
-	      width = "0" 
+	      width = "100" 
 	      opacity = "0.0"/>
 
   </children>

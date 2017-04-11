@@ -43,6 +43,8 @@ xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGra
 	<interface>
 		<!-- Row item selection handler -->
     	<field id="rowItemSelected" type="intarray" alias="exampleRowList.rowItemSelected" onChange="OnRowItemSelected" alwaysnotify="true" />
+    	<!-- Row item focused handler - sets background image uri and focusedContent field -->
+    	<field id="rowItemFocused" type="intarray" alias="exampleRowList.rowItemFocused" onChange="OnRowItemFocused" alwaysnotify="true"/>
 	</interface>   
 	    
 </component>

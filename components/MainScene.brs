@@ -4,8 +4,6 @@ sub init()
     m.top.backgroundURI = "pkg:/images/blueSky-background-fhd.jpg"
     m.videoPlayer       =   m.top.findNode("VideoPlayer")
     m.rowlist = m.top.findNode("exampleRowList")
-    'm.rowlist.content = CreateObject("roSGNode", "RowListContent")
-    'loadServerData()
     ' Load Scene Data from Server
     m.serverLoad = CreateObject("roSGNode", "ServerLoad")
     m.serverLoad.ObserveField("content", "onContentChanged")
@@ -16,11 +14,15 @@ End sub
 function onContentChanged() as void
     print "MainScene.onContentChanged : content changed!"
     m.rowlist.content = m.serverLoad.content
-    'm.rowlist.content = CreateObject("roSGNode", "RowListContent")
     m.rowlist.setFocus(true)
     m.rowlist.visible = true
-    'print "MainScene.onContentChanged : row list content: " ; m.rowlist.content
 end function
+
+sub OnRowItemFocused()
+    ' Obtain the actual focused content in the RowList
+    'itemFocused = m.rowlist.content.getChild(m.rowlist.rowItemFocused[1])
+    'print "item focused : " ; itemFocused    
+end sub
 
 ' Listener to the item row selection in the RowList (OK button)
 sub OnRowItemSelected()
@@ -64,7 +66,7 @@ sub OnVideoPlayerStateChange()
         m.rowlist.SetFocus(true)
     else if m.videoPlayer.state = "playing"
     else if m.videoPlayer.state = "finished"
-        'hide vide player if video is finished
+        'hide video player if video is finished
         m.videoPlayer.visible = false
         m.rowlist.SetFocus(true)
     end if
