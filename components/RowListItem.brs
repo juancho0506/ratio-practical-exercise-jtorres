@@ -5,7 +5,7 @@ sub init()
   m.itemlabel = m.top.findNode("itemLabel")
   m.itemMaskDescription = m.top.findNode("itemMaskDescription")
   m.itemDescriptionLabel = m.top.findNode("itemDescriptionLabel")
-  m.top.observeField("itemDescriptionLabel", "onLabelContentChanged")
+  m.top.observeField("itemDescriptionLabel.text", "onLabelContentChanged")
 end sub
 
 sub showcontent()
@@ -21,7 +21,7 @@ sub showcontent()
      m.itemMask.width = "960"
      m.itemMask.height = "540"
      m.itemlabel.width = m.itemposter.width
-     m.itemlabel.translation = [0, 450]
+     m.itemlabel.translation = [0, 5]
      
   else
     m.itemposter.width = "384"
@@ -29,7 +29,7 @@ sub showcontent()
     m.itemMask.width = "384"
     m.itemMask.height = "216"
     m.itemlabel.width = m.itemposter.width
-    m.itemlabel.translation = [0, 180]
+    m.itemlabel.translation = [0, 50]
   end if
 end sub
 
@@ -38,7 +38,7 @@ sub showfocus()
   scale = 1 + (m.top.focusPercent * 0.3)
   if itemcontent.category = 0
     m.itemMaskDescription.visible = true
-    m.itemDescriptionLabel.visible = true
+    'm.itemDescriptionLabel.visible = true
     m.itemDescriptionLabel.text = itemcontent.description
     m.itemDescriptionLabel.width =  m.itemMaskDescription.width
     'm.itemDescriptionLabel.height =  m.itemMaskDescription.height

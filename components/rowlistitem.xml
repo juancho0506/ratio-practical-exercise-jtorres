@@ -38,10 +38,18 @@
         height = "540" 
         scaleRotateCenter = "[ 200.0, 220.0 ]"
         visible = "false">
+        
+        	<Label 
+		      id = "itemLabel" 
+		      translation = "[ 0, 0 ]" 
+		      horizAlign = "left" 
+		      width = "100"
+		      font="font:MediumBoldSystemFont" 
+		      opacity = "0.0"/>
         	
         	<Label 
-		      id = "itemDescriptionLabel" 
-		      translation = "[ 0, 0 ]" 
+		      id = "itemDescriptionLabel"
+		      translation = "[ 0, 80 ]" 
 		      horizAlign = "left" 
 		      width = "0" 
 		      wrap = "true"
@@ -52,12 +60,6 @@
         </Rectangle> 
 
     </Poster>
-    <Label 
-	      id = "itemLabel" 
-	      translation = "[ 350, 464 ]" 
-	      horizAlign = "right" 
-	      width = "100" 
-	      opacity = "0.0"/>
 
   </children>
 

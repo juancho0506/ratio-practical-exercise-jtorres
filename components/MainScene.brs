@@ -1,7 +1,7 @@
 ' ********** Copyright 2016 Roku Corp.  All Rights Reserved. **********  
 
 sub init()
-    m.top.backgroundURI = "pkg:/images/blueSky-background-fhd.jpg"
+    m.top.backgroundURI = "pkg:/images/test-background2-fhd.jpg"
     m.videoPlayer       =   m.top.findNode("VideoPlayer")
     m.rowlist = m.top.findNode("exampleRowList")
     ' Load Scene Data from Server
