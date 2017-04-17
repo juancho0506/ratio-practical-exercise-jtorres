@@ -17,7 +17,6 @@
 
     <Poster 
       id = "itemPoster"
-      translation = "[ 10, 10 ]" 
       width = "0" 
       height = "0" 
       scaleRotateCenter = "[ 256.0, 144.0 ]" >
@@ -29,13 +28,15 @@
         width = "0" 
         height = "0" 
         scaleRotateCenter = "[ 256.0, 144.0 ]"/>
-      
-       <Rectangle 
+
+    </Poster>
+    
+    <Rectangle 
         id = "itemMaskDescription"
-        color = "0x495564"
-        opacity = "0.75"
-        width = "600" 
-        height = "540" 
+        color = "0x3C434B"
+        opacity = "1"
+        width = "465" 
+        height = "540"
         scaleRotateCenter = "[ 200.0, 220.0 ]"
         visible = "false">
         
@@ -43,13 +44,15 @@
 		      id = "itemLabel" 
 		      translation = "[ 0, 0 ]" 
 		      horizAlign = "left" 
-		      width = "100"
+		      width = "0"
 		      font="font:MediumBoldSystemFont" 
+		      wrap = "true"
+		      maxlines = "2"
 		      opacity = "0.0"/>
         	
         	<Label 
 		      id = "itemDescriptionLabel"
-		      translation = "[ 0, 80 ]" 
+		      translation = "[ 0, 105 ]" 
 		      horizAlign = "left" 
 		      width = "0" 
 		      wrap = "true"
@@ -57,9 +60,7 @@
 		      
 		      opacity = "50.0"/>
         	
-        </Rectangle> 
-
-    </Poster>
+        </Rectangle>
 
   </children>
 

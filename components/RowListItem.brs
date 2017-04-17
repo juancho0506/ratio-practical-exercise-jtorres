@@ -18,9 +18,10 @@ sub showcontent()
   if itemcontent.category = 0
      m.itemposter.width = "960"
      m.itemposter.height = "540"
+     m.itemposter.translation = [ 465, 0 ]
      m.itemMask.width = "960"
      m.itemMask.height = "540"
-     m.itemlabel.width = m.itemposter.width
+     m.itemlabel.width = m.itemMaskDescription.width
      m.itemlabel.translation = [0, 5]
      
   else
@@ -28,8 +29,9 @@ sub showcontent()
     m.itemposter.height = "216"
     m.itemMask.width = "384"
     m.itemMask.height = "216"
-    m.itemlabel.width = m.itemposter.width
-    m.itemlabel.translation = [0, 50]
+    m.itemlabel.width = m.itemMaskDescription.width
+    m.itemposter.translation = [ 0, 0 ]
+    m.itemlabel.translation = [0,0]
   end if
 end sub
 

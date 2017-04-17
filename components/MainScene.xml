@@ -16,12 +16,12 @@ xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGra
 	        itemComponentName = "RowListItem"
 	        numRows = "3" 
 	        itemSize = "[ 1980, 540 ]" 
-	        rowItemSize = "[[960, 540], [384, 216]]"
+	        rowItemSize = "[[1425, 540], [384, 216]]"
 	        itemSpacing = "[ 0, 0 ]"
 	        rowItemSpacing = "[[25, 50], [50,0], [20, 0]]"
 	        showRowLabel = "[ false, true ]" 
 	        drawFocusFeedback = "true"
-	        focusXOffset = "[500, 0]"
+	        focusXOffset = "[250, 0]"
 	        vertFocusAnimationStyle = "fixedFocusWrap" 
 	        rowFocusAnimationStyle = "fixedFocusWrap" />
 	        
