@@ -45,7 +45,7 @@ sub showfocus()
     m.itemMaskDescription.visible = true
     'm.itemDescriptionLabel.visible = true
     m.itemDescriptionLabel.text = itemcontent.description
-    m.itemDescriptionLabel.width =  m.itemMaskDescription.width
+    m.itemDescriptionLabel.width =  m.itemMaskDescription.width - 10
     'm.itemDescriptionLabel.height =  m.itemMaskDescription.height
     m.itemDescriptionLabel.opacity =  m.itemMaskDescription.opacity
   end if
