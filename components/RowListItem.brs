@@ -20,25 +20,27 @@ sub showcontent()
      m.itemposter.width = "955"
      m.itemposter.height = "540"
      m.itemposter.translation = [ 465, 0 ]
-     m.itemMask.width = "955"
+     m.itemMask.width = m.itemposter.width + m.itemMaskDescription.width
      m.itemMask.height = "540"
+     m.itemMask.translation = [0,0]
      m.itemlabel.width = m.itemMaskDescription.width
      m.itemlabel.translation = [10, 10]
      
   else
-    m.itemposter.width = "384"
-    m.itemposter.height = "216"
+    m.itemposter.width = "382"
+    m.itemposter.height = "214"
     m.itemMask.width = "384"
     m.itemMask.height = "216"
     m.itemlabel.width = m.itemMaskDescription.width
     m.itemposter.translation = [ 0, 0 ]
+    m.itemMask.translation = [0,0]
     m.itemlabel.translation = [0,0]
   end if
 end sub
 
 sub showfocus()
   itemcontent = m.top.itemContent
-  scale = 1 + (m.top.focusPercent * 0.3)
+  'scale = 1 + (m.top.focusPercent * 0.3)
   if itemcontent.category = 0
     m.itemMaskDescription.visible = true
     'm.itemDescriptionLabel.visible = true

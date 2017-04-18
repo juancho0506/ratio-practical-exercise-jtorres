@@ -20,17 +20,8 @@
       width = "0" 
       height = "0" 
       scaleRotateCenter = "[ 256.0, 144.0 ]" >
-
-      <Rectangle 
-        id = "itemMask"
-        color = "0x000000FF"
-        opacity = "0.75" 
-        width = "0" 
-        height = "0" 
-        scaleRotateCenter = "[ 256.0, 144.0 ]"/>
-
     </Poster>
-    
+           
     <Rectangle 
         id = "itemMaskDescription"
         color = "0x3C434B"
@@ -60,7 +51,15 @@
 		      font="font:SmallestSystemFont"
 		      opacity = "50.0"/>
         	
-        </Rectangle>
+    </Rectangle>
+    
+    <Rectangle 
+        id = "itemMask"
+        color = "0x000000FF"
+        opacity = "0.75" 
+        width = "0" 
+        height = "0" 
+        scaleRotateCenter = "[ 256.0, 144.0 ]"/>
 
   </children>
 
