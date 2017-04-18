@@ -59,6 +59,4 @@ end sub
 
 sub onLabelContentChanged()
     print "Enters label content changed!"
-    m.itemMaskDescription.visible = false
-    print "row list obtained: " ; m.rowlist
 end sub
