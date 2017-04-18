@@ -42,7 +42,7 @@
         
         	<Label 
 		      id = "itemLabel" 
-		      translation = "[ 0, 0 ]" 
+		      translation = "[ 10, 0 ]" 
 		      horizAlign = "left" 
 		      width = "0"
 		      font="font:MediumBoldSystemFont" 
@@ -52,12 +52,12 @@
         	
         	<Label 
 		      id = "itemDescriptionLabel"
-		      translation = "[ 0, 105 ]" 
+		      translation = "[ 10, 150]"
 		      horizAlign = "left" 
 		      width = "0" 
 		      wrap = "true"
 		      maxlines = "8"
-		      
+		      font="font:SmallestSystemFont"
 		      opacity = "50.0"/>
         	
         </Rectangle>

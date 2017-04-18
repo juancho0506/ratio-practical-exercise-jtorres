@@ -1,7 +1,7 @@
 ' ********** Copyright 2016 Roku Corp.  All Rights Reserved. **********  
 
 sub init()
-    m.top.backgroundURI = "pkg:/images/test-background2-fhd.jpg"
+    m.top.backgroundURI = "pkg:/images/dark-purple-background.jpg"
     m.videoPlayer       =   m.top.findNode("VideoPlayer")
     m.rowlist = m.top.findNode("exampleRowList")
     ' Load Scene Data from Server
@@ -12,7 +12,7 @@ sub init()
 End sub
 
 function onContentChanged() as void
-    print "MainScene.onContentChanged : content changed!"
+    'print "MainScene.onContentChanged : content changed!"
     m.rowlist.content = m.serverLoad.content
     m.rowlist.setFocus(true)
     m.rowlist.visible = true

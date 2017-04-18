@@ -5,7 +5,8 @@ sub init()
   m.itemlabel = m.top.findNode("itemLabel")
   m.itemMaskDescription = m.top.findNode("itemMaskDescription")
   m.itemDescriptionLabel = m.top.findNode("itemDescriptionLabel")
-  m.top.observeField("itemDescriptionLabel.text", "onLabelContentChanged")
+  m.itemDescriptionLabel.observeField("text", "onLabelContentChanged")
+  m.rowlist = m.top.findNode("exampleRowList")
 end sub
 
 sub showcontent()
@@ -16,13 +17,13 @@ sub showcontent()
   'parentContent = itemcontent.getParent()
   m.itemMaskDescription.visible = false
   if itemcontent.category = 0
-     m.itemposter.width = "960"
+     m.itemposter.width = "955"
      m.itemposter.height = "540"
      m.itemposter.translation = [ 465, 0 ]
-     m.itemMask.width = "960"
+     m.itemMask.width = "955"
      m.itemMask.height = "540"
      m.itemlabel.width = m.itemMaskDescription.width
-     m.itemlabel.translation = [0, 5]
+     m.itemlabel.translation = [10, 10]
      
   else
     m.itemposter.width = "384"
@@ -58,4 +59,6 @@ end sub
 
 sub onLabelContentChanged()
     print "Enters label content changed!"
+    m.itemMaskDescription.visible = false
+    print "row list obtained: " ; m.rowlist
 end sub
